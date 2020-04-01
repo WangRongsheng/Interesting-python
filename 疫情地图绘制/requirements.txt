@@ -1,0 +1,12 @@
+beautifulsoup4==4.8.2
+certifi==2019.11.28
+chardet==3.0.4
+idna==2.8
+Jinja2==2.11.0
+MarkupSafe==1.1.1
+prettytable==0.7.2
+pyecharts==1.6.2
+requests==2.22.0
+simplejson==3.17.0
+soupsieve==1.9.5
+urllib3==1.25.8
