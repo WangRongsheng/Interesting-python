@@ -2,7 +2,7 @@ beautifulsoup4==4.8.2
 certifi==2019.11.28
 chardet==3.0.4
 idna==2.8
-Jinja2==2.11.0
+Jinja2==2.11.3
 MarkupSafe==1.1.1
 prettytable==0.7.2
 pyecharts==1.6.2
