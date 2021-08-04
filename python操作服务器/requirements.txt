@@ -1,0 +1,11 @@
+#1、安装依赖包
+#pip install ecdsa
+#pip install Crypto -i https://pypi.tuna.tsinghua.edu.cn/simple
+#pip install Twisted
+#2、安装paramiko
+#pip install paramiko
+#先安装三个依赖库，再安装Paramiko，直接安装Paramiko会报错
+ecdsa
+Crypto
+Twisted
+paramiko

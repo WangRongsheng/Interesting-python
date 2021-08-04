@@ -1,0 +1,4 @@
+paramiko核心组件：
+1. SSH组件：SSHClient，作用类似于Linux的ssh命令，用于执行远程命令。
+2. SFTP组件：SFTPClient，作用类似于Linux的sftp命令，用于文件上传、下载、修改文件权限等。
+
