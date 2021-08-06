@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>display</title>
+</head>
+<body>
+
+    <!--
+        canvas 这个标签常用来绘制图像
+    -->
+    <canvas id="canvas"></canvas>
+
+</body>
+
+<script>
+    var address = "192.168.2.12";
+    var port = 20210;
+    var ws = new WebSocket("ws://"+address+":"+port+"/video");
+    var canvas = document.getElementById("canvas");
+    var start = document.getElementById("start");
+	var realcanvas = document.createElement("canvasbuffer");
+	var buffercanvas = document.createElement("canvasbuffer");
+    //设置一个定时10ms,等待WebSocket 连接完成
+    var timer = setInterval(function () {
+        if (ws.readyState == 1){
+            //想服务器发送数据,请求图片,这里发送的内容随便都可以
+            ws.send("msg");
+            clearInterval(timer);
+        }
+    },16);
+
+    //信息的回调处理函数
+    ws.onmessage = function (res) {
+        //(1).首先获取到一帧帧的图片
+		//ctx.drawImage(buffer,0,0); //后面两个0代表从坐标(0,0)的位置开始绘制图片
+        var img_src = JSON.parse(res.data)["img"];
+        var img = new Image();
+        img.src = img_src;
+		
+
+		
+        //(2).展示出来
+        var ctx = canvas.getContext("2d"); // 2维图像
+
+		
+		img.onload = function(){
+            canvas.setAttribute("width",img.width);
+            canvas.setAttribute("height",img.height);
+			ctx.drawImage(img,0,0,img.width,img.height);
+			ws.send("msg");
+		}
+        
+        
+		
+    }
+
+</script>
+</html>
