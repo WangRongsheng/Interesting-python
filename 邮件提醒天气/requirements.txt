@@ -19,7 +19,7 @@ pandas==1.0.3
 parso==0.6.2
 pickleshare==0.7.5
 prompt-toolkit==3.0.4
-Pygments==2.6.1
+Pygments==2.7.4
 pynput==1.6.8
 pyparsing==2.4.6
 python-dateutil==2.8.1
